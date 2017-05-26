@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 300px;
+			height: 20px;
+			border-radius: 20px;
+			border: 1px solid gray;
+			
+		}
+		#jindu{
+			height: 20px;
+			background: pink;
+			border: none;
+			
+		}
+		span{
+			display: block;
+			font-size: 12px;
+			text-align: center;
+		}
+		</style>
+	</head>
+	
+	<body>
+		<div>
+		<div id="jindu"></div>
+		<span id="txt"></span>
+		</div>
+	</body>
+</html>
+<script>
+	window.onload=function(){
+		var timer = setInterval(function(){
+				var i = jindu.style.width.replace("%","");
+				i++;
+				txt.innerHTML = i + "%";
+				jindu.style.width = i + "%";
+				if(i == 100){
+					clearInterval(timer);
+				}
+			},200);
+	}
+</script>

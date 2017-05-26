@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 30px;
+			height: 30px;
+			border:none;
+			background: skyblue;
+			position: absolute;
+			border-radius: 50%;
+		}
+	</style>
+	</head>
+	
+	<body>
+	</body>
+</html>
+<script>
+	document.onmousemove=function(event){
+		event=event||window.event;
+		var div=document.createElement("div");
+		document.body.appendChild(div);
+		div.style.background=rndColor();
+		div.style.left=event.clientX+"px";
+		div.style.top=event.clientY+"px";
+		
+		
+		var divs = document.getElementsByTagName("div");
+		var l = divs.length;
+		if( l==20 ){
+			document.body.removeChild(divs[0]);
+		}
+		
+	}
+	function rndColor(){
+	var r=parseInt(Math.random()*256);
+	var g=parseInt(Math.random()*256);
+	var b=parseInt(Math.random()*256);
+	
+	//return "rgb("+r","+g+","+b+"）";
+	return "rgb("+r+","+g+","+b+")";
+	
+}
+	
+</script>

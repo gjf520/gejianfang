@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		div{
+			width: 380px;
+			height: 370px ;
+			margin: 0 auto;
+			overflow: hidden;
+			
+		}
+		#list{
+			width: 400px;
+			height:333px;
+			margin: 0 auto;
+			background: ghostwhite;
+		}
+		#list li{
+			width: 80px;
+			height: 80px;
+			font-size: 20px;
+			line-height: 80px;
+			text-align: center;
+			font-weight: bold;
+			font-family: "bodoni mt";
+			margin-right: 20px;
+			margin-top: 20px;
+			background: blanchedalmond;
+			float: left;
+			cursor: pointer;
+		}
+		#content>div{
+			width: 380px;
+			height: 90px;
+			display: none;
+			background: ghostwhite;
+			margin: 0 auto;
+		}
+		#dian{
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+			display: block;
+		}	
+		.checked{background: skyblue;}
+		.selected{display: block;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div id="list">
+				<li id="checked">一月 </li>
+				<li>二月</li>
+				<li>三月</li>
+				<li>四月</li>
+				<li>五月</li>
+				<li>六月</li>	
+				<li>七月</li>
+				<li>八月</li>
+				<li>九月</li>
+				<li>十月</li>
+				<li>十一月</li>
+				<li>十二月</li>	
+				<div id="dian">验证奇迹奇迹的时刻来了！</div>
+			</div>
+			<div id="content"> 
+				<div id="selected">一月，你好</div>
+				<div>二月，你好</div>
+				<div>三月，你好</div>
+				<div>四月，你好</div>
+				<div>五月，你好</div>
+				<div>六月，你好</div>
+				<div>七月，你好</div>
+				<div>八月，你好</div>
+				<div>九月，你好</div>
+				<div>十月，你好</div>
+				<div>十一月，你好</div>
+				<div>十二月，你好</div>
+			</div>
+			
+		</div>
+		
+	</body>
+</html>
+<script>
+var list=document.getElementById("list");
+var content=document.getElementById("content");
+var lis=list.children;
+var divs=content.children;
+//console.log(divs);
+var l=lis.length;
+//console.log(lis);
+for(i=0;i<l;i++){
+	li=lis[i];
+	li.index=i;
+	li.onclick=function(){
+//		alert(111)
+//		var l=divs.length;
+		for(j=0;j<l;j++){
+		lis[j].className="";	// 所有的按钮变灰
+		divs[j].className="";
+		}
+		this.className="checked";
+		divs[this.index].className="selected";
+	}
+}
+
+
+	
+
+</script>
